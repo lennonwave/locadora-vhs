@@ -14,7 +14,7 @@
     <div class="topo-esq"><span class="seta">〈</span> VOLTAR / RETORNAR</div>
     <div class="topo-centro">
       <h1>CINEVHS</h1>
-      <p id="subtitulo-topo">LANÇAMENTO / A24</p>
+      <p id="subtitulo-topo">Poderes by lennon.raw</p> <!-- SUA ASSINATURA AQUI -->
     </div>
     <div class="topo-dir">CARREIRA 2012–2024 <span class="lupa">⌕</span></div>
   </header>
@@ -35,9 +35,7 @@
     <button class="nav-seta esq" id="btnPrev">〈</button>
     
     <div class="carrossel-container">
-      <div class="carrossel" id="carrossel">
-        <!-- As fitas serão injetadas pelo JS -->
-      </div>
+      <div class="carrossel" id="carrossel"></div>
     </div>
 
     <button class="nav-seta dir" id="btnNext">〉</button>
@@ -62,23 +60,23 @@
   <div id="modalPlayer" class="modal-player">
     <div class="crt-container">
       
-      <!-- Controles do Player -->
-      <div class="player-controles">
+      <!-- Barra de controles separada do vídeo -->
+      <div class="player-topo">
         <button class="botao-controle" id="btnToggleCrt">CRT: ON</button>
         <button class="botao-controle" id="fecharPlayer">✕ FECHAR</button>
       </div>
       
-      <!-- O Vídeo do Drive (O sandbox ajuda a ignorar bloqueios de login) -->
-      <iframe 
-        id="iframeDrive" 
-        src="" 
-        allow="autoplay; fullscreen" 
-        allowfullscreen
-        sandbox="allow-same-origin allow-scripts allow-popups allow-forms">
-      </iframe>
-      
-      <!-- O Efeito de TV de Tubo -->
-      <div class="crt-overlay" id="crtOverlay"></div>
+      <div class="video-wrapper">
+        <iframe 
+          id="iframeDrive" 
+          src="" 
+          allow="autoplay; fullscreen" 
+          allowfullscreen
+          sandbox="allow-same-origin allow-scripts allow-popups allow-forms">
+        </iframe>
+        <div class="crt-overlay" id="crtOverlay"></div>
+      </div>
+
     </div>
   </div>
 
