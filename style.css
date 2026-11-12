@@ -13,7 +13,9 @@ body {
   color: var(--texto);
   font-family: 'VT323', monospace;
   font-size: 1.1rem;
+  /* dvh resolve o problema da barra de endereço no celular */
   height: 100vh;
+  height: 100dvh; 
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -80,7 +82,6 @@ body {
   position: relative;
   width: 100%;
   overflow: hidden;
-  min-height: 450px;
   margin-top: 10px;
 }
 
@@ -224,6 +225,7 @@ body {
   opacity: 1;
   pointer-events: auto;
 }
+
 .crt-container {
   position: relative;
   width: 80vw;
@@ -235,6 +237,7 @@ body {
   box-shadow: 0 0 50px rgba(51, 255, 51, 0.2), inset 0 0 20px rgba(0,0,0,0.8);
   border: 8px solid #1a1a1a; 
 }
+
 #iframeDrive {
   width: 100%;
   height: 100%;
@@ -242,6 +245,7 @@ body {
   position: relative;
   z-index: 1;
 }
+
 .crt-overlay {
   position: absolute;
   inset: 0;
@@ -261,6 +265,7 @@ body {
 .crt-overlay.desativado {
   opacity: 0;
 }
+
 .player-controles {
   position: absolute;
   top: 15px;
@@ -287,81 +292,96 @@ body {
 }
 
 /* =========================================
-   RESPONSIVO (CELULAR E TABLET)
+   AJUSTES FINAIS PARA CELULAR (MOBILE)
    ========================================= */
 @media (max-width: 768px) {
-  /* Esconde os textos "Voltar" e "Carreira" para economizar espaço vertical */
+  /* Esconde textos do topo que ocupam espaço */
   .topo-esq, .topo-dir, .filtros {
-    display: none; 
+    display: none !important; 
   }
+
   .topo {
-    padding: 15px 10px;
+    padding: 10px;
   }
   .topo-centro h1 {
     font-size: 2rem;
-    margin-bottom: 5px;
+    margin-bottom: 0px;
   }
+  .topo-centro p { font-size: 0.8rem; }
 
-  /* Diminui o palco do carrossel */
+  /* Diminui a área do carrossel */
   .palco {
-    min-height: 280px; 
-    margin-top: 0;
+    margin-top: 10px;
+    min-height: 250px;
   }
   .carrossel-container {
-    height: 260px;
+    height: 250px;
   }
   
-  /* Reduz as fitas */
+  /* Reduz bastante a fita */
   .fita {
-    width: 45px;
-    height: 220px;
+    width: 40px;
+    height: 200px;
   }
   .fita.destaque {
     width: 180px;
     height: 240px; 
   }
+  
+  .nav-seta {
+    display: none; /* No celular o usuário desliza com o dedo, escondemos as setas */
+  }
 
-  /* Diminui os textos de baixo */
+  /* Textos do filme */
   .info-filme {
     padding: 5px;
+    margin-top: 5px;
   }
   .info-filme h2 {
     font-size: 1.8rem;
-    margin-bottom: 0;
   }
   .info-filme p {
     font-size: 0.9rem;
   }
 
-  /* Ajusta o rodapé e destaca o botão */
+  /* O SEGREDO: Fixa o rodapé no fundo no mobile */
   .rodape {
-    padding: 15px;
-    flex-direction: column;
-    gap: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--fundo);
+    padding: 10px;
     border-top: 1px solid var(--borda);
   }
   
-  /* Esconde o texto de direitos autorais no celular */
+  /* Esconde o copyright no celular */
   .rodape-esq {
     display: none; 
   }
+
   .rodape-dir {
     width: 100%;
   }
+
+  /* Botão gigante fácil de clicar */
   .botao-assistir {
-    width: 100%; /* Botão ocupa toda a largura no celular */
-    padding: 10px;
+    width: 100%;
+    padding: 12px;
     font-size: 1.3rem;
+    background: var(--verde-crt);
+    color: #000;
+    border-color: var(--verde-crt);
   }
 
-  /* Ajusta a TV do player CRT */
+  /* Ajustes do Player CRT */
   .crt-container {
     width: 95vw;
-    border: 4px solid #1a1a1a;
+    border-width: 4px;
   }
   .player-controles {
-    top: 10px;
-    right: 10px;
+    top: 5px;
+    right: 5px;
     gap: 5px;
   }
   .botao-controle {
