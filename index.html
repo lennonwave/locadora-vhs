@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CINEVHS</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Topo -->
+  <header class="topo">
+    <div class="topo-esq"><span class="seta">〈</span> VOLTAR / RETORNAR</div>
+    <div class="topo-centro">
+      <h1>CINEVHS</h1>
+      <p id="subtitulo-topo">LANÇAMENTO / A24</p>
+    </div>
+    <div class="topo-dir">CARREIRA 2012–2024 <span class="lupa">⌕</span></div>
+  </header>
+
+  <!-- Filtros -->
+  <nav class="filtros">
+    <button class="ativo">TODOS</button>
+    <button>HISTÓRICO</button>
+    <button>1980s</button>
+    <button>1990s</button>
+    <button>2000s</button>
+    <button>2010s</button>
+    <button>2020s</button>
+  </nav>
+
+  <!-- Palco Principal -->
+  <main class="palco">
+    <button class="nav-seta esq" id="btnPrev">〈</button>
+    
+    <div class="carrossel-container">
+      <div class="carrossel" id="carrossel">
+        <!-- As fitas serão injetadas pelo JS -->
+      </div>
+    </div>
+
+    <button class="nav-seta dir" id="btnNext">〉</button>
+  </main>
+
+  <!-- Informações do Filme -->
+  <section class="info-filme">
+    <h2 id="titulo-destaque">Carregando...</h2>
+    <p id="diretor-destaque"></p>
+    <p id="ano-destaque"></p>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="rodape">
+    <div class="rodape-esq">© CINE VHS. TODOS OS DIREITOS RESERVADOS.</div>
+    <div class="rodape-dir">
+      <button id="btnAssistir" class="botao-assistir">ASSISTIR AGORA ▷</button>
+    </div>
+  </footer>
+
+  <!-- MODAL DO PLAYER CRT -->
+  <div id="modalPlayer" class="modal-player">
+    <div class="crt-container">
+      
+      <!-- Controles do Player -->
+      <div class="player-controles">
+        <button class="botao-controle" id="btnToggleCrt">CRT: ON</button>
+        <button class="botao-controle" id="fecharPlayer">✕ FECHAR</button>
+      </div>
+      
+      <!-- O Vídeo do Drive (O sandbox ajuda a ignorar bloqueios de login) -->
+      <iframe 
+        id="iframeDrive" 
+        src="" 
+        allow="autoplay; fullscreen" 
+        allowfullscreen
+        sandbox="allow-same-origin allow-scripts allow-popups allow-forms">
+      </iframe>
+      
+      <!-- O Efeito de TV de Tubo -->
+      <div class="crt-overlay" id="crtOverlay"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

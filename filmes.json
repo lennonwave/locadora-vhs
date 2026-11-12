@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "titulo": "Resident Evil",
+    "diretor": "Zach Cregger",
+    "ano": 2026,
+    "capa": "capas/residentevil2026.jpeg",
+    "lombada": "capas/lombadaresidentevil2026.png",
+    "link": "https://drive.google.com/file/d/1UbInQmNdzvnIWURVJOxo993VO02EOgnn/preview"
+  },
+  {
+    "id": 2,
+    "titulo": "Primetime",
+    "diretor": "Lance Oppenheim",
+    "ano": 2026,
+    "capa": "capas/primetime.jpeg",
+    "lombada": "capas/lombadaprimetime.png",
+    "link": "https://drive.google.com/SEU_LINK_AQUI"
+  },
+  {
+    "id": 3,
+    "titulo": "Tempo de Guerra",
+    "diretor": "Alex Garland e Ray Mendoza",
+    "ano": 2025,
+    "capa": "capas/tempodeguerra.jpeg",
+    "lombada": "capas/lombadatempodeguerra.png",
+    "link": "https://drive.google.com/SEU_LINK_AQUI"
+  }
+]
