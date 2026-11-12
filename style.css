@@ -40,7 +40,7 @@ body {
 }
 .topo-centro p { 
   font-size: 0.9rem; 
-  text-transform: uppercase; /* Deixa a assinatura toda maiúscula */
+  text-transform: uppercase;
 }
 .seta, .lupa { font-size: 1.5rem; vertical-align: middle; }
 
@@ -269,7 +269,7 @@ body {
 .video-wrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 9; /* FORÇA A PROPORÇÃO DE CINEMA NO PC */
   background: #000;
 }
 
@@ -360,7 +360,7 @@ body {
 
   /* --- PLAYER NO MOBILE --- */
   .crt-container {
-    width: 100vw; /* Tela cheia no celular */
+    width: 100vw; 
     height: auto;
     border-radius: 0;
     border: none;
@@ -368,11 +368,12 @@ body {
   
   .player-topo {
     padding: 15px;
-    padding-top: 30px; /* Respeita o notch do celular */
+    padding-top: 30px; 
   }
 
+  /* Sobrescreve a proporção de cinema no celular para ele ocupar a tela em pé */
   .video-wrapper {
-    aspect-ratio: auto;
-    height: 60vh; /* Ocupa 60% da tela na vertical */
+    aspect-ratio: auto; 
+    height: 60vh; 
   }
 }
