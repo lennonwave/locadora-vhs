@@ -224,7 +224,6 @@ body {
   opacity: 1;
   pointer-events: auto;
 }
-
 .crt-container {
   position: relative;
   width: 80vw;
@@ -236,7 +235,6 @@ body {
   box-shadow: 0 0 50px rgba(51, 255, 51, 0.2), inset 0 0 20px rgba(0,0,0,0.8);
   border: 8px solid #1a1a1a; 
 }
-
 #iframeDrive {
   width: 100%;
   height: 100%;
@@ -244,7 +242,6 @@ body {
   position: relative;
   z-index: 1;
 }
-
 .crt-overlay {
   position: absolute;
   inset: 0;
@@ -264,7 +261,6 @@ body {
 .crt-overlay.desativado {
   opacity: 0;
 }
-
 .player-controles {
   position: absolute;
   top: 15px;
@@ -290,16 +286,86 @@ body {
   color: #000;
 }
 
-/* Responsivo */
+/* =========================================
+   RESPONSIVO (CELULAR E TABLET)
+   ========================================= */
 @media (max-width: 768px) {
-  .palco { margin-top: 20px; min-height: 350px; }
-  .carrossel-container { height: 320px; }
-  .fita { width: 50px; height: 250px; }
-  .fita.destaque { width: 220px; height: 293px; transform: rotate(-3deg) scale(1); }
-  .info-filme h2 { font-size: 2rem; }
-  .topo, .rodape { padding: 10px 15px; flex-direction: column; gap: 5px; text-align: center; }
-  .filtros { display: none; }
-  .crt-container { width: 95vw; }
-  .player-controles { top: 10px; right: 10px; gap: 5px; }
-  .botao-controle { font-size: 1rem; padding: 4px 10px; }
+  /* Esconde os textos "Voltar" e "Carreira" para economizar espaço vertical */
+  .topo-esq, .topo-dir, .filtros {
+    display: none; 
+  }
+  .topo {
+    padding: 15px 10px;
+  }
+  .topo-centro h1 {
+    font-size: 2rem;
+    margin-bottom: 5px;
+  }
+
+  /* Diminui o palco do carrossel */
+  .palco {
+    min-height: 280px; 
+    margin-top: 0;
+  }
+  .carrossel-container {
+    height: 260px;
+  }
+  
+  /* Reduz as fitas */
+  .fita {
+    width: 45px;
+    height: 220px;
+  }
+  .fita.destaque {
+    width: 180px;
+    height: 240px; 
+  }
+
+  /* Diminui os textos de baixo */
+  .info-filme {
+    padding: 5px;
+  }
+  .info-filme h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0;
+  }
+  .info-filme p {
+    font-size: 0.9rem;
+  }
+
+  /* Ajusta o rodapé e destaca o botão */
+  .rodape {
+    padding: 15px;
+    flex-direction: column;
+    gap: 10px;
+    border-top: 1px solid var(--borda);
+  }
+  
+  /* Esconde o texto de direitos autorais no celular */
+  .rodape-esq {
+    display: none; 
+  }
+  .rodape-dir {
+    width: 100%;
+  }
+  .botao-assistir {
+    width: 100%; /* Botão ocupa toda a largura no celular */
+    padding: 10px;
+    font-size: 1.3rem;
+  }
+
+  /* Ajusta a TV do player CRT */
+  .crt-container {
+    width: 95vw;
+    border: 4px solid #1a1a1a;
+  }
+  .player-controles {
+    top: 10px;
+    right: 10px;
+    gap: 5px;
+  }
+  .botao-controle {
+    font-size: 0.9rem;
+    padding: 4px 8px;
+  }
 }
